@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<title></title>
+	<title>Gallery</title>
 	<style>
 		* {box-sizing: border-box;}
 		@media screen and (max-width: 500px) {
@@ -14,7 +14,14 @@
 		    float: none;
 		    display: block;
 		    text-align: left;
-  }
+  				}
+
+  		  .mySlides {display:none;
+  		  	float: left;
+		    height: 100px;
+		    background-size: cover;}
+
+
 	</style>
 </head>
 <body class= "w3-monospace">
@@ -58,12 +65,52 @@
 		  <a href="signup.html" class=" w3-bar-item w3-button w3-padding-medium">Sign Up</a>
 	</div>
 </div>
-<div class="ewan" style="padding-top:100px; background-color:blue">
+<div class="ewan" style="padding-top:100px; margin-top:100px; margin-bottom:100px;">
 	
-	<p>asdfghj</p>
+			<h2 class="w3-center">Gallery</h2>
+
+		  <div class="w3-content w3-display-container">   
+			  <img class="mySlides" src="gallery/sisig.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/pindang2.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/kamaru.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/morcon.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/buro.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/bringhe2.jpg" style="width:100%;">
+			  <img class="mySlides" src="gallery/cookies.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/halo-halo2.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/tibok-tibok.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/bibingka2.jpg" style="width:100%">
+			  <img class="mySlides" src="gallery/turrones2.jpg" style="width:100%">
+
+			  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+			</div>
+	
 </div>
 
 	<script>
+
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";  
+		  }
+		  x[slideIndex-1].style.display = "block";  
+		}
+
+
+
+
 	function myFunction() {
 	  var x = document.getElementById("Demo");
 	  if (x.className.indexOf("w3-show") == -1) { 
